@@ -1,5 +1,5 @@
 from fastapi import APIRouter, WebSocket
-from core.qdrant_service import search_faq
+from core.chatbot import generate_answer
 
 router = APIRouter()
 
@@ -7,6 +7,6 @@ router = APIRouter()
 async def websocket_endpoint(wbsock: WebSocket):
     await wbsock.accept()
     while True:
-        data = await wbsock.receive_text()
-        results = search_faq(data)
-        await wbsock.send_json(results)
+        query = await wbsock.receive_text()
+        answer = generate_answer(query)
+        await wbsock.send_text(answer)

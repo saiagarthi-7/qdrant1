@@ -1,4 +1,4 @@
-from qdrant_client import search_faq
+from core.qdrant_service import search_faq
 
 def generate_answer(query: str):
     results = search_faq(query)
