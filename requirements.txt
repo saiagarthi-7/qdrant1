@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-docx 
+qdrant-client
+sentence-transformers
+websockets
+python-dotenv
+python-multipart
