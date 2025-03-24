@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>FAQ Chat</title></head>
+<body>
+    <h3>Ask Your Question:</h3>
+    <input type="text" id="input" />
+    <button onclick="send()">Send</button>
+    <div id="response"></div>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8000/ws/faq");
+
+        socket.onopen = () => console.log("WebSocket connected");
+
+        socket.onmessage = (event) => {
+            document.getElementById("response").innerHTML = "Answer: " + event.data;
+        };
+
+        function send() {
+            const text = document.getElementById("input").value;
+            socket.send(text);
+        }
+    </script>
+</body>
+</html>
