@@ -5,4 +5,4 @@ def generate_answer(query: str):
     if results:
         top = results[0].payload
         return f"Q: {top['question']}\nA: {top['answer']}"
-    return "Sorry, I couldn't find a relevant answer."
+    return "sorry, I couldn't find near answer."
