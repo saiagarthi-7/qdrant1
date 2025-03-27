@@ -3,6 +3,7 @@ from core.chatbot import generate_answer
 
 router = APIRouter()
 
+
 @router.websocket("/ws/faq")
 async def websocket_endpoint(wbsock: WebSocket):
     await wbsock.accept()
@@ -13,3 +14,5 @@ async def websocket_endpoint(wbsock: WebSocket):
             await wbsock.send_text(answer)
     except WebSocketDisconnect:
         print("Client disconnected")
+
+        

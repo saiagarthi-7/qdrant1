@@ -6,4 +6,4 @@ sentence-transformers
 websockets
 python-dotenv
 python-multipart
-openai
+langchain_openai

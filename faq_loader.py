@@ -8,8 +8,8 @@ def load_faqs_from_docx(docx_path: str):
         print(f"Error loading DOCX file: {e}")
         return []
     faqs = []
-    current_question = None
-    current_answer = []
+    current_question = None 
+    current_answer = [] 
     try:
         for para in doc.paragraphs:
             if para.text.strip():
@@ -37,4 +37,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
